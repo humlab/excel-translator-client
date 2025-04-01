@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+    <body>
+        <h1>Excel Translator</h1>
+        <div id="upload-panel-container">
+            <div id="source-data-upload-container" class="upload-container">
+                <h2>Excel</h2>
+                <div id="source-data-upload" class="dropzone">
+                    <div class="dz-message" data-dz-message><span>Drop your excel to translate here</span></div>
+                </div>
+
+                <div class="worksheet-selector-container">
+                    <label for="worksheet-selector">Select a worksheet:</label>
+                    <select name="worksheet-selector" class="worksheet-selector"></select>
+                </div>
+            </div>
+        </div>
+
+        <h2>Columns</h2>
+
+        <button class="export-btn">Export to new XLSX</button>
+
+        <div id="column-mapping-container">
+            
+            <div id="excel-data-table-container" class="columns-container">
+                <table id="excel-data-table">
+                    <thead>
+                        <tr>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+
+        <button class="export-btn">Export to new XLSX</button>
+        
+        <!-- Modal overlay for user interaction -->
+        <div id="overlay-background">
+            <div id="overlay">
+                <div id="overlay-close-btn" title="Close">X</div>
+                <div id="overlay-content"></div>
+            </div>
+        </div>
+
+        <template id="translation-dialog">
+            <div class="translation-dialog-container">
+                <div class="original-text">
+                    <label for="original-text">Original text</label>
+                    <div class="original-text-content"></div>
+                </div>
+                <hr />
+                <label for="translation-input">Translation</label>
+                <textarea name="translation-input" class="translation-input"></textarea>
+                
+                <div class="translation-buttons">
+                    <button type="button" class="suggest-btn">Suggest</button>
+                    <button type="button" class="save-btn">Save</button>
+                </div>
+            </div>
+        </template>
+
+        <template id="translate-column-dialog">
+            <div class="translation-dialog-container">
+
+                <div class="translation-buttons">
+                    <button type="button" class="suggest-btn">Suggest</button>
+                    <button type="button" class="save-btn">Save</button>
+                </div>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>
+                                <label for="original-text">Original text</label>
+                            </th>
+                            <th>
+                                <label for="translation-input">Occurances</label>
+                            </th>
+                            <th>
+                                <label for="translation-input">Translation</label>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+                
+                <div class="translation-buttons">
+                    <button type="button" class="suggest-btn">Suggest</button>
+                    <button type="button" class="save-btn">Save</button>
+                </div>
+            </div>
+        </template>
+
+    </body>
+</html>
