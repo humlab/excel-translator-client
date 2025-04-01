@@ -12,9 +12,9 @@ RUN npm install
 
 RUN npm run build
 
-RUN rm -rf /var/lib/apt/lists/*
+RUN mv /excel-translator-client/dist/* /usr/share/nginx/html/
 
-RUN mv dist/* /usr/share/nginx/html/
+RUN rm -rf /var/lib/apt/lists/*
 
 # Build arguments for HTTP Basic Auth
 ARG HTTP_BASIC_AUTH_USER

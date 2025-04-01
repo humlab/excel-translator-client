@@ -1,9 +1,9 @@
 import Dropzone from "dropzone";
 import "dropzone/dist/dropzone.css";
 import "../stylesheets/style.scss";
-//import exceljs from "exceljs";
 import exceljs from "exceljs/dist/exceljs.js";
-import { nanoid } from "nanoid";
+
+const devMode = false;
 
 class SeadExcelTranslator {
     constructor() {
@@ -21,7 +21,9 @@ class SeadExcelTranslator {
             this.renderTable(worksheetName, workbook);
         });
 
-        this.autoLoadExampleData();
+        if(devMode) {
+            this.autoLoadExampleData();
+        }
 
         // Add the event listener for closing the overlay once
         const overlayBackground = document.querySelector("#overlay-background");
