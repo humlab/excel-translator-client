@@ -3,9 +3,6 @@ import "dropzone/dist/dropzone.css";
 import "../stylesheets/style.scss";
 import exceljs from "exceljs/dist/exceljs.js";
 
-const EXTERNAL_URL = typeof EXTERNAL_URL !== "undefined" ? EXTERNAL_URL : "";
-console.log("EXTERNAL_URL:", EXTERNAL_URL);
-
 const devMode = false;
 
 class SeadExcelTranslator {
@@ -422,7 +419,7 @@ class SeadExcelTranslator {
         }
 
         try {
-            const response = await fetch(EXTERNAL_URL+"/api/translate", {
+            const response = await fetch(window.location.href+"/api/translate", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
