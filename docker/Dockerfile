@@ -1,4 +1,4 @@
-FROM nginx:latest
+FROM nginx:stable
 
 RUN apt-get update && apt-get install -y nano git curl nodejs npm apache2-utils
 
