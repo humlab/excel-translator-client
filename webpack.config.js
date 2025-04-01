@@ -38,6 +38,9 @@ export default (env, config) => {
             { from: 'data', to: 'data', noErrorOnMissing: true }, // Adjust path as needed
           ],
         }),
+        new webpack.DefinePlugin({
+          EXTERNAL_URL: JSON.stringify(process.env.EXTERNAL_URL || "")
+      })
       ],
       module: {
         rules: [

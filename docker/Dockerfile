@@ -19,6 +19,8 @@ RUN rm -rf /var/lib/apt/lists/*
 # Build arguments for HTTP Basic Auth
 ARG HTTP_BASIC_AUTH_USER
 ARG HTTP_BASIC_AUTH_PASSWORD
+ARG EXTERNAL_URL
+ENV EXTERNAL_URL=$EXTERNAL_URL
 
 # Create an .htpasswd file using the build arguments
 RUN htpasswd -bc /etc/nginx/.htpasswd $HTTP_BASIC_AUTH_USER $HTTP_BASIC_AUTH_PASSWORD
