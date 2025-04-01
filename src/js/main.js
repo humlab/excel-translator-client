@@ -419,7 +419,7 @@ class SeadExcelTranslator {
         }
 
         try {
-            const response = await fetch(window.location.href+"/api/translate", {
+            const response = await fetch(window.location.href+"api/translate", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
